@@ -1,0 +1,27 @@
+<!-- client review part here -->
+<section class="client_review">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+        {% if temoignages %}
+          <div class="client_review_slider owl-carousel">
+            {% for temoignage in temoignages %}
+            <div class="single_client_review">
+              <div class="client_img">
+                <img src="{{ temoignage.photo.url }}"  />
+              </div>
+              <p>
+                {{ temoignage.message }}
+              </p>
+              <h5>- {{ temoignage.nom }} {{ temoignage.prenom }}</h5>
+            </div>
+            {% endfor %}
+
+        {% else %}
+            <p>Aucun Temoignage</p>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- client review part end -->
